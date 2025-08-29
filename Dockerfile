@@ -14,6 +14,7 @@ apt-get -y install --no-install-recommends \
   ca-certificates \
   python3 \
   socat \
+  procps \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
